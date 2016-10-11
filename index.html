@@ -1,48 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Omar Ceesay | GitHub</title>
-
-    <!-- Bootstrap core CSS -->
-<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- Custom styles for this template -->
-    <link href="./assets/css/main.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="web2.css">
   </head>
-
   <body>
-
-    <div class="header">
-      <h1 align="left">Accelerator</h1>
-      <h2 align="center"></h2>
-      <div class="nav">
-        <ul>
-          <a href="#"><li>Home</li></a>
-          <a href="#"><li>Lorem</li></a>
-          <a href=""><li>Neque porro</li></a>
-          <a href=""><li>Lorem Porro</li></a>
-          <a href=""><li>Dolor sit</li></a>
-        </ul><!-- /.container -->
-      </div>
-
+    <div class="container">
+    <div id="header">
+      <h1 align="center">Highland Park</h1>
+      <h2 align="center">Senior Year</h2>
     </div>
-    
+    <div id="nav">
+      <ul>
+        <a href="./currentEvents.html"><li>Current Events</li></a>
+        <a href="./english12.html"><li>English 12</li></a>
+        <a href=""><li>IB Math Studies</li></a>
+        <a href=""><li>US Government</li></a>
+        <a href="./physics.html"><li>Physics</li></a>
+      </ul>
+    </div>
+  </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="">About</a>
+        <a href="">Pictures</a>
+        <a href="">Stuff</a>
+        <a href="">Things</a>
+        <a href="">Contact</a>
+      </div>
+    <span style="font-size:20px;cursor:pointer" onclick="openNav()">Open &#9776;</span>
 
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search.." title="Type in a name">
+
+  <table id="recent">
+    <tr class="header">
+      <th style="width:70%">Name</th>
+      <th style="width:30%">Date</th>
+    </tr>
+    <tr>
+      <td><a href="">Physics 2D Practice Problems</a></td>
+      <td>10/11/2016</td>
+    </tr>
+    <tr>
+      <td><a href="">Big Four Quiz II</a></td>
+      <td>10/11/2016</td>
+    </tr>
+
+    <script>
+    function search() {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("recent");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
+  </div>
   </body>
 </html>

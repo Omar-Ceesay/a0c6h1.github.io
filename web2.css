@@ -1,0 +1,185 @@
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+body{
+  background-color: #dddddd;
+  font-family: Ariel, sans-serif;
+}
+#header{
+  font-family: Ariel, sans-serif;
+  color: white;
+  background-color: #b31919;
+  position:absolute;
+  left:0; right:0;
+  height: 92px;
+}
+h1{
+  font-size: 40px;
+  padding: 10px 0 10px 0;
+}
+#header h2 {
+  font-weight: 300;
+  padding-bottom: 10px;
+}
+#nav{
+  position: absolute;
+  left:0px; top:100px; right:0px; bottom:0;
+  padding-bottom: 5px;
+}
+#nav li{
+  display: inline;
+  background-color: #b31919;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 4px;
+  padding-top: 3px;
+  border-radius: 5px;
+  box-shadow: 2px 2px #000;
+}
+#nav li:hover{
+  color: #020202;
+  background-color: white;
+  transition-property: color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in;
+  transition-delay: 0;
+}
+#nav a{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-family: Ariel, sans-serif;
+}
+.photos{
+  margin-top: 8px;
+  margin-left: 35px;
+}
+.photos li{
+  display: inline;
+  font-family: Ariel, sans-serif;
+}
+.photos img{
+  width: 17%;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 15px;
+  border: 1px solid black;
+  margin-bottom: 5px;
+  margin-top: 2px;
+}
+.pCap{
+  padding-bottom: 1px;
+  margin-top: 25px;
+  font-family: Ariel, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+.pCap li{
+  display: inline;
+  margin-left: 6%;
+}
+.pCap a{
+  border-radius: 7px;
+  background-color: #b31919;
+}
+/*#sideBar{
+  position: absolute;
+  right:0; top:92px; bottom: 0;
+  width: 178px;
+  background: #fff;
+  border: 1px solid black;
+}*/
+#sideNav a{
+}
+#sideNav li{
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #2b427c;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s
+}
+.sidenav a:hover, .offcanvas a:focus{
+    color: #818181;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+span{
+  position: absolute;
+  color: #ffffff;
+  right: 40px;
+  top: 92px;
+  background-color: #b31919;
+  padding: 4px;
+  padding-top: 3px;
+  border-radius: 5px;
+  box-shadow: 2px 2px #000;
+  margin-top: 5px;
+}
+#recent{
+  position: absolute;
+  top: 225px;
+}
+#recent td a{
+  text-decoration: none;
+  color: #000000;
+}
+#myInput {
+  position: absolute;
+  top: 175px;
+  background-image: url('./photos/search.png');
+  background-position: 5px 5px;
+  background-repeat: no-repeat;
+  background-size: 26px;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #818181;
+  margin-bottom: 12px;
+}
+#recent {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #818181;
+  font-size: 18px;
+}
+
+#recent th, #recent td {
+  text-align: left;
+  padding: 12px;
+}
+
+#recent tr {
+  border-bottom: 1px solid #818181;
+}
+
+#recent tr.header, #recent tr:hover {
+  background-color: #f1f1f1;
+}
