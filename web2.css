@@ -230,3 +230,42 @@ input[type=submit] {
   display: block;
   border: 1px #818181 solid;
 }
+#myDIV{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #ffffff;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #b31919;
+}
+#addAsignment input{
+    border: none;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+#download {
+  position: absolute;
+  top: 225px;
+  left: 0; right: 0;
+  text-align: left;
+}
+#download a{
+  background-color: #b31919;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 4px;
+  padding-top: 3px;
+  border-radius: 4px;
+  box-shadow: 2px 2px #818181;
+}

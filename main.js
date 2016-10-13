@@ -40,3 +40,18 @@ function search() {
       }
     }
   }
+
+/*function newAssignment(){
+  var a = document.getElement("a");
+  var inputValue = document.getElementById("AssignmentInput").value;
+  var t = document.createTextNode(inputValue);
+  a.appendChild(t);
+  if (inputValue === ''){
+    alert("Naw");
+  }else{
+    document.getElementById("recent").appendChild(a);
+  }
+  document.getElementById("AssignmentInput").value = '';
+  }
+  }
+}*/
