@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="test.css"></head>
+<body>
+
+<div id="sideBar" class="barSide">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9981;</a>
+  <a href="" class="sideBarLink">About</a>
+  <a href="" class="sideBarLink">Contact</a>
+  <a href="" class="sideBarLink">Info</a>
+  <a href="" class="sideBarLink">Other</a>
+</div>
+<span style="font-size:18px;cursor:pointer" onclick="openNav()">Open</span>
+
+<script>
+function openNav(){
+  document.getElementById("sideBar").style.width="175px";
+}
+function closeNav(){
+  document.getElementById("sideBar").style.width="0";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+  font-family: arial;
+}
+.barSide{
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: .65s;
+  background-color: pink;
+  padding-top: 65px;
+}
+.closebtn{
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  font-size: 26px;
+  color: black;
+}
+#sideBar a{
+  padding: 5px 5px 5px 20px;
+  text-decoration: none;
+  display: block;
+  transition: .15s;
+  font-size: 22px;
+}
+.sideBarLink:hover{
+  color: #818181;
+}
+#sideBar a.sideBarLink{
+  padding: 5px 5px 5px 25px;
+}

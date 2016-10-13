@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="web2.css">
   </head>
   <body>
+    <script src="./main.js"></script>
     <div class="container">
     <div id="header">
       <h1 align="center">Highland Park</h1>
@@ -27,27 +28,20 @@
         <a href="">Things</a>
         <a href="">Contact</a>
       </div>
-    <span style="font-size:18px;cursor:pointer" onclick="openNav()">Open &#9776;</span>
+    <span class="openButton" style="font-size:18px;cursor:pointer" onclick="openNav()">Open &#9776;</span>
 
-<script>
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-    }
-
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-    }
-</script>
-
+<div id="searchBar">
 <input type="text" id="myInput" onkeyup="search()" placeholder="Search.." title="Type in a name">
+<span style="font-size:16px;cursor:pointer" onclick="searchDate()" tabindex="1">Date</span>
+</div>
 
 <div id="submit">
   <form action="./test.php">
-    <label for="fname">Assignment</label>
-    <input type="text" id="fname" name="assignment">
+    <label for="assign">Assignment</label>
+    <input type="text" id="assign" name="assignment">
 
-    <label for="lname">Date Due</label>
-    <input type="text" id="lname" name="datedue">
+    <label for="date">Date Due</label>
+    <input type="text" id="date" name="datedue">
 
     <label for="className">Class Name</label>
     <input type="text" id="className" name="className">
@@ -87,7 +81,7 @@
     </tr>
     <tr>
       <td><a href="">Coordinate Geometry - Days 1-3</a><p style="display:none;">IB Math Studies</p></td>
-      <td>9/14/2016</td>
+      <td>09/14/2016</td>
     </tr>
     <tr>
       <td><a href="">My Story So Far Speech</a><p style="display:none;">English 12</p></td>
@@ -101,28 +95,6 @@
       <td><a href="">Unit One Test</a><p style="display:none;">US Goverment</p></td>
       <td>09/20/2016</td>
     </tr>
-
-
-    <script>
-    function search() {
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("recent");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-    </script>
-
   </div>
   </body>
 </html>

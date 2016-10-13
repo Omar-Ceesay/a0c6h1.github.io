@@ -92,10 +92,6 @@ h1{
   background: #fff;
   border: 1px solid black;
 }*/
-#sideNav a{
-}
-#sideNav li{
-}
 .sidenav {
   height: 100%;
   width: 0;
@@ -131,7 +127,7 @@ h1{
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-span{
+span.openButton{
   position: absolute;
   color: #ffffff;
   right: 40px;
@@ -151,7 +147,7 @@ span{
   text-decoration: none;
   color: #000000;
 }
-#myInput {
+#myInput, #searchBar span{
   position: absolute;
   top: 175px;
   background-image: url('./photos/search.png');
@@ -207,4 +203,19 @@ input[type=submit] {
   top: 100%;
   left: 350px;
   right: 350px;
+}
+#searchBar span{
+  background-image: url("");
+  background-color: #b31919;
+  color: #ffffff;
+  right: 0;
+  width: 5%;
+  top: 183px;
+  font-size: 16px;
+  padding: 12px 0px 12px 10px !important;
+  border: 1px solid #818181;
+  margin-bottom: 4px !important;
+}
+#searchBar span:focus{
+  background-color: #2b427c;
 }
