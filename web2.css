@@ -263,18 +263,19 @@ input[type=submit] {
   text-decoration: none;
   text-align: right;
 }
-#download p{
+#download a{
+  text-decoration: none;
+  color: #ffffff;
   display: inline;
   background-color: #b31919;
   padding: 4px;
   padding-top: 3px;
   border-radius: 4px;
   box-shadow: 2px 2px #818181;
-  color: #ffffff;
   margin-right: 25%;
   transition: 0.2s;
   font-size: 22px;
 }
-#download p:hover{
+#download a:hover{
   background-color: #d91919;
 }
