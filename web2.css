@@ -28,6 +28,9 @@ h1{
   left:0px; top:100px; right:0px; bottom:0;
   padding-bottom: 5px;
 }
+#nav li:nth-last-child(2){
+  text-align: center;
+}
 #nav li{
   display: inline;
   background-color: #b31919;
@@ -50,7 +53,6 @@ h1{
   font-size: 18px;
   color: white;
   text-decoration: none;
-  font-family: Ariel, sans-serif;
 }
 .photos{
   margin-top: 8px;
@@ -256,16 +258,23 @@ input[type=submit] {
 }
 #download {
   position: absolute;
-  top: 225px;
-  left: 0; right: 0;
-  text-align: left;
+  width: 100%;
+  top: 115px;
+  text-decoration: none;
+  text-align: right;
 }
-#download a{
+#download p{
+  display: inline;
   background-color: #b31919;
-  margin-left: 10px;
-  margin-right: 10px;
   padding: 4px;
   padding-top: 3px;
   border-radius: 4px;
   box-shadow: 2px 2px #818181;
+  color: #ffffff;
+  margin-right: 25%;
+  transition: 0.2s;
+  font-size: 22px;
+}
+#download p:hover{
+  background-color: #d91919;
 }

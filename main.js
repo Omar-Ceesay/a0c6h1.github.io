@@ -42,9 +42,10 @@ function search() {
   }
 
 /*function newAssignment(){
-  var a = document.getElement("a");
+  var a = document.getElement("a", "td");
   var inputValue = document.getElementById("AssignmentInput").value;
   var t = document.createTextNode(inputValue);
+  var tr = document.getElementsByTagName("tr");
   a.appendChild(t);
   if (inputValue === ''){
     alert("Naw");
