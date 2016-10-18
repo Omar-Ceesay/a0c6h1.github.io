@@ -7,8 +7,17 @@ function closeNav() {
 }
 
 var date = false;
+var dateColor = false;
 function searchDate(){
-  date = true;
+  date = !date;
+  dateColor = !dateColor;
+  console.log(dateColor);
+  console.log("date = "+date);
+  /*if(dateColor = true){
+    document.getElementById("dateSearch").style.backgroundColor = "#2b427c";
+  }else if(dateColor = false){
+    document.getElementById("dateSearch").style.backgroundColor = "#b31919";
+  }*/
 }
 
 function search() {
