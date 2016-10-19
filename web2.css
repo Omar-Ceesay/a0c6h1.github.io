@@ -33,9 +33,9 @@ h1{
 }
 #nav li{
   display: inline;
+  max-width: 35px;
   background-color: #b31919;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 10px; margin-right: 10px;
   padding: 4px;
   padding-top: 3px;
   border-radius: 4px;
@@ -45,7 +45,7 @@ h1{
   color: #020202;
   background-color: white;
   transition-property: color, background-color;
-  transition-duration: 0.15s;
+  transition-duration: 0.13s;
   transition-timing-function: ease-in;
   transition-delay: 0;
 }
@@ -181,7 +181,7 @@ span.openButton{
 #recent tr.header, #recent tr:hover {
   background-color: #f1f1f1;
 }
-input[type=text] {
+input[type=text]{
     width: 100%;
     padding: 12px 10px;
     margin: 8px 0;
@@ -199,12 +199,23 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 22px;
+}
+#classSelect{
+  width: 100%;
+  padding: 12px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
 }
 #submit{
   position: absolute;
   top: 100%;
   left: 350px;
   right: 350px;
+  padding-bottom: 80px;
 }
 #searchBar span{
   background-image: url("");
@@ -213,7 +224,6 @@ input[type=submit] {
   right: 0;
   width: 5%;
   top: 183px;
-  font-size: 16px;
   padding: 12px 0px 12px 10px !important;
   border: 1px solid #818181;
   margin-bottom: 4px !important;
@@ -259,6 +269,8 @@ input[type=submit] {
   top: 115px;
   text-decoration: none;
   text-align: right;
+  display: block;
+  padding-top: 2px;
 }
 #download a{
   text-decoration: none;

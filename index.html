@@ -32,11 +32,11 @@
 
 <div id="searchBar">
 <input type="text" id="myInput" onkeyup="search()" placeholder="Search.." title="Type in a name">
-<span style="font-size:16px;cursor:pointer" onclick="searchDate()" tabindex="1" id="dateSearch">Date</span>
+<span style="font-size:18px;cursor:pointer" onclick="searchDate()" tabindex="1" id="dateSearch">Date</span>
 </div>
 
-<!--<div id="submit">
-  <form action="./test.php">
+<div id="submit">
+  <form action="./Assignments/test.php">
     <label for="assign">Assignment</label>
     <input type="text" id="assign" name="assignment">
 
@@ -44,13 +44,22 @@
     <input type="text" id="date" name="datedue">
 
     <label for="className">Class Name</label>
-    <input type="text" id="className" name="className">
+    <select style="font-size:16px" id="classSelect">
+      <option style="font-size:16px" value="math studies">IB Math Studies</option>
+      <option style="font-size:16px" value="english 12">English 12</option>
+      <option style="font-size:16px" value="physics">Physics</option>
+      <option style="font-size:16px" value="us goverment">US Goverment</option>
+    </select>
+
+    <label for="date">Picture Location</label>
+    <input type="text" id="picLocation" name="picLocate">
+
 
     <input type="submit" value="Submit">
   </form>
 </div>
 
-<div id="myDIV">
+<!--<div id="myDIV">
   <input type="text" id="AssignmentInput" placeholder="Title...">
   <span onclick="newAssignment()" class="addBtn">Add</span>
 </div>-->

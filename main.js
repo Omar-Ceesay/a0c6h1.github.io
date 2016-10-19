@@ -50,7 +50,7 @@ function search() {
     }
   }
 
-/*function newAssignment(){
+function newAssignment(){
   var a = document.getElement("a", "td");
   var inputValue = document.getElementById("AssignmentInput").value;
   var t = document.createTextNode(inputValue);
@@ -63,5 +63,3 @@ function search() {
   }
   document.getElementById("AssignmentInput").value = '';
   }
-  }
-}*/
