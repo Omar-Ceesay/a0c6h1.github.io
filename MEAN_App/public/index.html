@@ -1,9 +1,88 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>My MEAN App</title>
-</head>
-<body>
-  <h1>My MEAN App!</h1>
-</body>
+<html ng-app='app'>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./web2.css">
+    <title>Highland Park Senior Year</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+    <script src="./main.js"></script>
+    <script>
+    var app = angular.module('app', ['ngRoute']);
+    app.controller('HomeController', function($http){
+      var vm = this;
+      vm.users = [];
+
+      vm.getUsers = function(){
+        $http.get('/api/users').then(function(response){
+          vm.users = response.data;
+        });
+      }
+      vm.getUsers();
+
+      vm.removeUser = function(user){
+        if(user){
+          $http.delete('./api/users/' + user._id).then(function(response){
+            vm.getUsers();
+          });
+        }
+      }
+
+      vm.addUser = function(user){
+        if(user && user.assignment && user.class && user.date){
+          $http.post('/api/users', user).then(function(response){
+            vm.getUsers();
+            vm.user = '';
+            vm.adduser=false;
+          });
+        }else{
+          console.log("Invalid");
+        }
+      }
+      return true;
+      });
+
+  app.config(function($routeProvider) {
+    $routeProvider.when('/', {
+      controller: 'HomeController',
+      controllerAs: 'vm',
+      templateUrl: './home.html'
+    });
+    $routeProvider.otherwise('/');
+  });
+  </script>
+  </head>
+  <body>
+<div class="container">
+    <div id="header">
+      <h1 align="center">Highland Park</h1>
+      <h2 align="center">Senior Year</h2>
+    </div>
+<!--    <div id="nav">
+      <ul>
+        <a href="./currentEvents.html"><li>Current Events</li></a>
+        <a href="./english12.html"><li>English 12</li></a>
+        <a href=""><li>IB Math Studies</li></a>
+        <a href="./#/"><li>US Government</li></a>
+        <a href="./physics.html"><li>Physics</li></a>
+      </ul>
+    </div>-->
+  </div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="">About</a>
+        <a href="">Pictures</a>
+        <a href="">Stuff</a>
+        <a href="">Things</a>
+        <a href="">Contact</a>
+      </div>
+    <span class="openButton" style="font-size:18px;cursor:pointer" onclick="openNav()">Open &#9776;</span>
+
+
+<div id="recent" id="myTable">
+    <div ng-view></div>
+</div>
+
+  </div>
+  </body>
 </html>

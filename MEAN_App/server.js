@@ -1,4 +1,4 @@
-var Model = require('./models/models.js')
+var Model = require('./models/models.js');
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -6,7 +6,7 @@ var morgan = require('morgan');
 
 var app = express();
 
-var db = "mongodb://localhost/MyMeanApp";
+var db = "mongodb://localhost/WebsiteMean";
 
 mongoose.connect(db, function(err, response){
   if(err){
@@ -19,6 +19,9 @@ mongoose.connect(db, function(err, response){
 
 var router = express.Router();
 
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({ extended: true}));
 //GET
 router.get("/api/users", function(request, response){
 
@@ -28,20 +31,42 @@ router.get("/api/users", function(request, response){
     }
     else{
       response.status(200).send(users);
-      console.log("Users Sent")
+      console.log("Data Sent")
     }
   })
 })
 
-router.get("/home", function(request, response){
-  return response.send({message:"TODO create a new post in the database"});
+router.get("/test", function(request, response){
+  return response.send({message:"Test"});
     })
+
+router.post("/api/users", function(request, response){
+  var model = new Model();
+  model.assignment =  request.body.assignment;
+  model.class =  request.body.class;
+  model.date =  request.body.date;
+  model.save(function(err, user){
+    if (err) {
+      response.status(500).send(err)
+    }else{
+      response.status(200).send(user)
+    }
+  });
+});
+
+router.delete('/api/users/:id', function(request, response){
+  var id = request.params.id;
+  Model.remove({_id: id}, function(err, res){
+    if(err){
+      response.status(500).send(err);
+    }else{
+      response.status(200).send({message: 'successfully deleted '+ id});
+    }
+    })
+  })
 
 app.use('/', router);
 
-app.use(bodyParser.json());
-
-app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(morgan('dev'));
 

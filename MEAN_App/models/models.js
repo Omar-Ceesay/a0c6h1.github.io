@@ -3,8 +3,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UsersSchema = new Schema({
-  name: String,
-  email: String
+  assignment: String,
+  class: String,
+  date: String
 });
 
 var model = mongoose.model('Users', UsersSchema);
