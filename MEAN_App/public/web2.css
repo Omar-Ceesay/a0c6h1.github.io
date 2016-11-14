@@ -143,7 +143,7 @@ span.openButton{
 }
 #recent{
   position: absolute;
-  top: 225px;
+  top: 175px;
 }
 #recent td{
   border: 1px solid #818181;
@@ -273,4 +273,10 @@ input[type=submit] {
 }
 #download a:hover{
   background-color: #d91919;
+}
+.create-assignment, .edit-assignment{
+  margin-bottom: 90px;
+}
+.add-assignment{
+  margin-bottom: 30px;
 }

@@ -65,6 +65,22 @@ router.delete('/api/users/:id', function(request, response){
     })
   })
 
+router.put('/api/users', function(request, response){
+  Model.findById(request.body._id, function(err, user){
+    if(err){
+      response.status(404).send(err);
+    }else{
+      user.update(request.body, function(err, succ){
+        if(err){
+          response.send(err)
+        }else{
+          response.status(200).send({message: 'succ'})
+        }
+      });
+    }
+  })
+});
+
 app.use('/', router);
 
 

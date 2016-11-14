@@ -22,7 +22,15 @@
 
       vm.removeUser = function(user){
         if(user){
-          $http.delete('./api/users/' + user._id).then(function(response){
+          $http.delete('/api/users/' + user._id).then(function(response){
+            vm.getUsers();
+          });
+        }
+      }
+
+      vm.editUser = function(user){
+        if(user){
+          $http.put('/api/users', user).then(function(response){
             vm.getUsers();
           });
         }
