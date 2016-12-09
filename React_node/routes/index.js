@@ -6,8 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/survey', function(req, res, next) {
-  res.render('survey');
+router.get('/createzone', function(req, res, next) {
+  res.render('createzone');
+});
+
+router.get('/createcomment', function(req, res, next) {
+  res.render('createcomment');
 });
 
 module.exports = router;
