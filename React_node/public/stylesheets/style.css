@@ -5,21 +5,44 @@ body {
 a {
   color: #00c7FF;
 }
+ td{
+  border: 1px solid #818181;
+}
+#myInput, #searchBar span{
+}
+ {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 18px;
+}
+th{
+  border: 1px solid #818181;
+}
+ th,  td {
+  text-align: left;
+  padding: 12px;
+}
+ tr {
+  border-bottom: 1px solid #818181;
+}
 
 .test{
-  position:relative;
   background-size: cover;
   background-image: url('../pictures/code-background.jpg');
   background-repeat: no-repeat;
   height: 250px;
   /*filter: blur(1.25px);*/
-  padding-left: auto;
-  padding-right: auto;
-  width: 100%;
-  font-size: 32px;
-  color: red;
 }
-
+.activeLink{
+  text-decoration: none;
+  background-color: #eee;
+  color: #23527c;
+}
+#stay{
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 #heading{
   width: 100%;
   padding: 19px;
@@ -37,7 +60,12 @@ a {
   width: 1170px;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
+  margin-right: 30%;
   margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 5px;
   font-size: 50px;
+}
+#commentBox{
+  border-radius: 1px;
 }
