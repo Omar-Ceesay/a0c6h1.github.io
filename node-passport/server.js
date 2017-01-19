@@ -34,6 +34,12 @@ app.use(flash());
 
 app.set('view engine', 'ejs');
 
+//auth route
+var auth = express.Router();
+require('./app/routes/auth.js')(auth, passport);
+app.use('/auth', auth);
+
+
 require('./app/routes.js')(app, passport);
 
 app.listen(port);

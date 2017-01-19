@@ -2,6 +2,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../app/models/user');
 
+
 module.exports = function(passport){
   passport.serializeUser(function(user, done){
     done(null, user.id);
@@ -19,12 +20,15 @@ module.exports = function(passport){
     passReqToCallback: true
   },
   function(req, username, password, done){
+    var mail = req.body.email;
     process.nextTick(function(){
       User.findOne({'local.username': username}, function(err, user){
         if(err){
           return done(err);
         }else if(user){
           return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+        }else if(  ){
+
         }else{
           var newUser = new User();
           newUser.local.username = username;
