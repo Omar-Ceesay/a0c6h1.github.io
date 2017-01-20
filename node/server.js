@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var http = require('http').Server(app);
 var port = process.env.PORT || 8080;
 var dbUrl = 'mongodb://localhost/ReactApp';
 //var client = require('twilio')('AC9c5006526a870fb2023c8247cdf5081d', 'b188e46e390578f26e9ba7efb30ad38a');
@@ -12,6 +13,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
 var MongoStore = require('connect-mongo')(session);
+var io = require('socket.io')(http);
 
 mongoose.connect(dbUrl, function(err, response){
   if(err){
@@ -34,6 +36,36 @@ app.use(session({secret: 'anystringoftext',
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
+var room1 = io.of('/room');
+room1.on('connection', function(socket){
+  console.log('someone connected');
+  socket.on('chat message', function(msg){
+    room1.emit('chat message', msg);
+  });
+  room1.on('connection', function(socket){
+  socket.broadcast.emit('User has connected');
+  });
+  room1.on('disconnect', function(socket){
+  socket.broadcast.emit('User has disconnected');
+  });
+});
+
+var room2 = io.of('/room2')
+room2.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+    socket.broadcast.emit('User has disconnected');
+  });
+  socket.on('chat message', function(msg){
+    room2.emit('chat message', msg);
+  });
+  socket.on('connection', function(socket){
+    room2.broadcast.emit('User has connected');
+  });
+});
+
 
 app.set('view engine', 'ejs');
 
@@ -59,5 +91,5 @@ app.use('/auth', auth);
 
 require('./app/routes.js')(app, passport);
 
-app.listen(port);
+http.listen(port);
 console.log('Server running on port: ' + port);
