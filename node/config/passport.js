@@ -27,8 +27,6 @@ module.exports = function(passport){
           return done(err);
         }else if(user){
           return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
-        }else if(  ){
-
         }else{
           var newUser = new User();
           newUser.local.username = username;
