@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var fileSchema = mongoose.Schema({
-	local: {
+	localFile: {
 		filename: String
 	}
 });
